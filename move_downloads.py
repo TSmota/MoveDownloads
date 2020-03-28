@@ -13,9 +13,9 @@ def main():
     folder_destination = "D:/Downloads"
     observer = Observer()
 
-    for folder in folders_to_track:
-        event_handler = DownloadHandler(folder, folder_destination)
-        observer.schedule(event_handler, folder, recursive=True)
+    for item in folders_to_track:
+        event_handler = DownloadHandler(item, folder_destination)
+        observer.schedule(event_handler, item["folder"], recursive=True)
         
     observer.start()
 
